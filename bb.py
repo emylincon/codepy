@@ -59,9 +59,13 @@ class GetText:
         img = img.convert("RGBA")
         pixdata = img.load()
         item = pixdata[0, 0]
-        if item[0] >= 200 and item[1] >= 200 and item[2] >= 200:
+        value_check = 150
+        if item[0] >= value_check and item[1] >= value_check and item[2] >= value_check:
+            # print('white')
             return 'white'
         else:
+            # print(item[0:3])
+            # print('black')
             return 'black'
 
     @staticmethod
