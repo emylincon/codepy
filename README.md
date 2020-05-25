@@ -18,4 +18,5 @@ tess.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 ```
 
 ## DEMO
+[YouTube Link](https://youtu.be/bFv0ZPqCIDI)
 ![](output/demo.gif)
