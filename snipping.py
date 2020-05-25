@@ -15,25 +15,23 @@ class Application():
         self.curX = None
         self.curY = None
 
-        # root.configure(background = 'red')
-        # root.attributes("-transparentcolor","red")
-
         root.attributes("-transparent", "blue")
         root.geometry('400x50+200+200')  # set new geometry
         root.title('Code Copy')
         self.menu_frame = Frame(master, bg="blue")
         self.menu_frame.pack(fill=BOTH, expand=YES)
 
-        self.buttonBar = Frame(self.menu_frame,bg="")
-        self.buttonBar.pack(fill=BOTH,expand=YES)
+        self.buttonBar = Frame(self.menu_frame, bg="")
+        self.buttonBar.pack(fill=BOTH, expand=YES)
 
-        self.snipButton = Button(self.buttonBar, width=3, command=self.createScreenCanvas, text='SNIP', background="grey", foreground='white')
+        self.snipButton = Button(self.buttonBar, width=3, command=self.createScreenCanvas, text='SNIP',
+                                 background="grey", foreground='white')
         self.snipButton.pack(expand=YES)
 
         self.master_screen = Toplevel(root)
         self.master_screen.withdraw()
         self.master_screen.attributes("-transparent", "blue")
-        self.picture_frame = Frame(self.master_screen, background = "blue")
+        self.picture_frame = Frame(self.master_screen, background="blue")
         self.picture_frame.pack(fill=BOTH, expand=YES)
 
     def takeBoundedScreenShot(self, x1, y1, x2, y2):
@@ -43,7 +41,10 @@ class Application():
         # name = "snips/" + fileName + ".png"
         name = 'snips/capture.png'
         im.save(name)
-        a = bb.GetText(name).get_code()
+        try:
+            a = bb.GetText(name).get_code()
+        except Exception:
+            a = f'Error Occured: {Exception}'
         print(a)
         cp.copy(a)
 
@@ -67,19 +68,19 @@ class Application():
         # self.recPosition()
 
         if self.start_x <= self.curX and self.start_y <= self.curY:
-            print("right down")
+            # print("right down")
             self.takeBoundedScreenShot(self.start_x, self.start_y, self.curX - self.start_x, self.curY - self.start_y)
 
         elif self.start_x >= self.curX and self.start_y <= self.curY:
-            print("left down")
+            # print("left down")
             self.takeBoundedScreenShot(self.curX, self.start_y, self.start_x - self.curX, self.curY - self.start_y)
 
         elif self.start_x <= self.curX and self.start_y >= self.curY:
-            print("right up")
+            # print("right up")
             self.takeBoundedScreenShot(self.start_x, self.curY, self.curX - self.start_x, self.start_y - self.curY)
 
         elif self.start_x >= self.curX and self.start_y >= self.curY:
-            print("left up")
+            # print("left up")
             self.takeBoundedScreenShot(self.curX, self.curY, self.start_x - self.curX, self.start_y - self.curY)
 
         self.exitScreenshotMode()
@@ -112,6 +113,7 @@ class Application():
         print(self.start_y)
         print(self.curX)
         print(self.curY)
+
 
 if __name__ == '__main__':
     root = Tk()
