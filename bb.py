@@ -30,7 +30,7 @@ class GetText:
         ch = {'‘': "'", '’': "'", '“': '"'}
         for i in ch:
             if i in txt:
-                txt.replace(i, ch[i])
+                txt = txt.replace(i, ch[i])
         return self.structure_me(txt)
 
     @staticmethod
@@ -41,11 +41,12 @@ class GetText:
         new_txt = ''
         tab = 0
         for line in lines:
-            sp = line.split()[0]
-            if sp in key_line:
-                tab = 0
-            elif sp in keys:
-                tab -= 4
+            if len(line.split()) != 0:
+                sp = line.split()[0]
+                if sp in key_line:
+                    tab = 0
+                elif sp in keys:
+                    tab -= 4
 
             new_txt += (' ' * tab) + line + '\n'
             if ':' in line:
