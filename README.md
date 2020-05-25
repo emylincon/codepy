@@ -11,7 +11,7 @@ Copy codes from youtube videos
     * pillow
 2. __System Requirements__
     * _Tesseract-OCR_: To install, download from <https://github.com/tesseract-ocr/tesseract/wiki>. Then add path in `bb.py`
-    * [installation video link](https://www.youtube.com/watch?v=4DrCIVS5U3Y&t=138s>)
+    * [installation video link](https://www.youtube.com/watch?v=4DrCIVS5U3Y&t=138s)
  ```python
 # Add your path here
 tess.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
