@@ -1,5 +1,5 @@
 ## CODEPY
-Copy codes from youtube videos
+Copy codes from youtube videos to clipboard
 
 ## REQUIREMENTS
 1. __Python Requirements__
