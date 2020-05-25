@@ -16,3 +16,6 @@ Copy codes from youtube videos
 # Add your path here
 tess.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 ```
+
+## DEMO
+![](output/demo.gif)
