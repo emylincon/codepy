@@ -40,7 +40,8 @@ class Application():
         im = pyautogui.screenshot(region=(x1, y1, x2, y2))
         x = datetime.datetime.now()
         fileName = x.strftime("%f")
-        name = "snips/" + fileName + ".png"
+        # name = "snips/" + fileName + ".png"
+        name = 'snips/capture.png'
         im.save(name)
         a = bb.GetText(name).get_code()
         print(a)

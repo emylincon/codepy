@@ -5,6 +5,7 @@ from PIL import Image
 import PIL.ImageOps
 import cv2
 
+# Add your path here
 tess.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 
