@@ -4,6 +4,7 @@ import pytesseract as tess
 from PIL import Image
 import PIL.ImageOps
 import cv2
+import keyword
 
 # Add your path here
 tess.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
@@ -49,8 +50,9 @@ class GetText:
                     tab -= 4
 
             new_txt += (' ' * tab) + line + '\n'
-            if ':' in line:
-                tab += 4
+            if len(line.split()) != 0:
+                if (':' in line) and (line.split()[0] in keyword.kwlist):
+                    tab += 4
 
         return new_txt
 
