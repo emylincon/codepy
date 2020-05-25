@@ -1,6 +1,10 @@
 ## CODEPY
 Copy codes from youtube videos to clipboard
 
+## Accuracy
+* The program has a minimum accuracy level of 80%
+* May need to eyeball and adjust code
+
 ## REQUIREMENTS
 1. __Python Requirements__
     * clipboard
