@@ -36,7 +36,7 @@ class GetText:
     @staticmethod
     def structure_me(txt):
         key_line = ['def', 'class']
-        keys = ['elif', 'except', 'else:', 'except:']
+        keys = ['elif', 'except', 'else:', 'except:', 'finally:', 'finally']
         lines = txt.splitlines()
         new_txt = ''
         tab = 0
