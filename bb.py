@@ -26,13 +26,32 @@ class GetText:
             self.save(text)
             return self.format_string(text)
 
-    @staticmethod
-    def format_string(txt):
+    def format_string(self, txt):
         ch = {'‘': "'", '’': "'", '“': '"'}
         for i in ch:
             if i in txt:
                 txt.replace(i, ch[i])
-        return txt
+        return self.structure_me(txt)
+
+    @staticmethod
+    def structure_me(txt):
+        key_line = ['def', 'class']
+        keys = ['elif', 'except', 'else:', 'except:']
+        lines = txt.splitlines()
+        new_txt = ''
+        tab = 0
+        for line in lines:
+            sp = line.split()[0]
+            if sp in key_line:
+                tab = 0
+            elif sp in keys:
+                tab -= 4
+
+            new_txt += (' ' * tab) + line + '\n'
+            if ':' in line:
+                tab += 4
+
+        return new_txt
 
     def check_bb(self):
         img = Image.open(self.file)
