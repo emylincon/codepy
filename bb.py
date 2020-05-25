@@ -28,7 +28,7 @@ class GetText:
             return self.format_string(text)
 
     def format_string(self, txt):
-        ch = {'‘': "'", '’': "'", '“': '"', '|': ''}
+        ch = {'‘': "'", '’': "'", '“': "'", '|': '', '"': "'"}
         for i in ch:
             if i in txt:
                 txt = txt.replace(i, ch[i])
