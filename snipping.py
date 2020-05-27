@@ -3,6 +3,10 @@ import pyautogui
 import datetime
 import bb
 import clipboard as cp
+import os
+
+current_path = os.path.dirname(os.path.abspath(__file__))
+os.chdir(current_path)
 
 
 class Application():
