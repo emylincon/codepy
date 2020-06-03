@@ -55,6 +55,8 @@ class GetText:
             if len(line.split()) != 0:
                 if (':' in line) and (line.split()[0] in keyword.kwlist):
                     tab += 4
+                elif 'return' in line:
+                    tab = 0
 
         return new_txt
 
