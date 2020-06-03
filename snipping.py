@@ -21,7 +21,7 @@ class Application():
 
         root.attributes("-transparent", "blue")
         root.geometry('400x50+200+200')  # set new geometry
-        root.title('Code Copy')
+        root.title('Codepy')
         self.menu_frame = Frame(master, bg="blue")
         self.menu_frame.pack(fill=BOTH, expand=YES)
 
@@ -41,7 +41,7 @@ class Application():
     def takeBoundedScreenShot(self, x1, y1, x2, y2):
         im = pyautogui.screenshot(region=(x1, y1, x2, y2))
         x = datetime.datetime.now()
-        fileName = x.strftime("%f")
+        # fileName = x.strftime("%f")
         # name = "snips/" + fileName + ".png"
         name = 'snips/capture.png'
         im.save(name)
@@ -96,7 +96,8 @@ class Application():
         self.master_screen.withdraw()
         root.deiconify()
 
-    def exit_application(self):
+    @staticmethod
+    def exit_application():
         print("Application exit")
         root.quit()
 
@@ -122,4 +123,5 @@ class Application():
 if __name__ == '__main__':
     root = Tk()
     app = Application(root)
+    root.iconbitmap('icon.ico')
     root.mainloop()
