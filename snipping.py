@@ -123,5 +123,5 @@ class Application():
 if __name__ == '__main__':
     root = Tk()
     app = Application(root)
-    root.iconbitmap('icon.ico')
+    root.iconbitmap('output/icon.ico')
     root.mainloop()
