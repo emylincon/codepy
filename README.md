@@ -10,11 +10,11 @@ Copy codes from youtube videos to clipboard
     * clipboard
     * pyautogui
     * tkinter
-    * opencv-python
+    * opencv-python (see `windows_install`)
     * pytesseract
     * pillow
 2. __System Requirements__
-    * _Tesseract-OCR_: To install, download from <https://github.com/tesseract-ocr/tesseract/wiki>. Then add path in `bb.py`
+    * _Tesseract-OCR_: (see `windows_install`) To install, download from <https://github.com/tesseract-ocr/tesseract/wiki>. Then add path in `bb.py`
     * [installation video link](https://www.youtube.com/watch?v=4DrCIVS5U3Y&t=138s)
  ```python
 # Add your path here
